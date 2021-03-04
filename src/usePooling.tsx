@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 // 10 seconds
 export const DEFAULT_POLLING_INTERVAL = 10000;
 
-export const usePooling = (shouldPool: boolean, callback: () => void, delay: number = DEFAULT_POLLING_INTERVAL) => {
+export const usePooling = (shouldPool: boolean, callback: () => void, delay: number = DEFAULT_POLLING_INTERVAL): void => {
   const savedCallback = useRef();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export const usePooling = (shouldPool: boolean, callback: () => void, delay: num
   }, [callback]);
 
   useEffect(() => {
-    let id;
+    let id: number;
 
     const handler = (...args) => savedCallback.current(...args);
 

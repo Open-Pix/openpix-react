@@ -13,3 +13,8 @@ web-build/
 .DS_Store
 .env
 yarn-error.log
+
+dist
+lib
+build
+size-snapshot.txt
