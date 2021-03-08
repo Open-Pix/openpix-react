@@ -8,6 +8,21 @@ OpenPix React SDK Using the [OpenPix](https://openpix.com.br/) Platform. [OpenPi
 yarn install @openpix/react
 ```
 
+## Setup Polyfills
+This plugin uses core-js to polyfill Promises
+
+Install core-js
+
+```jsx
+yarn install core-js
+```
+
+Add it to your App entrypoint
+
+```jsx
+import 'core-js/stable';
+```
+
 ## Usage with React
 
 ```jsx
