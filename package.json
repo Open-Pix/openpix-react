@@ -1,6 +1,16 @@
 {
   "name": "@openpix/react",
+  "description": "OpenPix React Integration",
   "version": "0.0.1",
+  "author": {
+    "name": "OpenPix",
+    "email": "dev@entria.com.br",
+    "url": "https://github.com/Open-Pix"
+  },
+  "bugs": {
+    "url": "https://github.com/Open-Pix/openpix-react",
+    "email": "dev@entria.com.br"
+  },
   "devDependencies": {
     "@babel/cli": "7.13.0",
     "@babel/core": "7.13.8",
@@ -55,11 +65,17 @@
   "files": [
     "lib"
   ],
+  "homepage": "http://developers.openpix.com.br",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
+  "keywords": [
+    "openpix",
+    "react"
+  ],
+  "license": "MIT",
   "lint-staged": {
     "*.{js,md,ts,tsx}": [
       "prettier --write"
@@ -67,6 +83,13 @@
   },
   "main": "lib/openpix-react.cjs.js",
   "module": "lib/openpix-react.esm.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Open-Pix/openpix-react"
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:local": "cross-env NODE_ENV=production rollup -c rollup.local.config.js",
