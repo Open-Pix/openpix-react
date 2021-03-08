@@ -36,6 +36,7 @@ const common = {
       parallel: 4,
     })],
   },
+  externals: ['react'],
 };
 
 const configEnv = ({ name, filename, libraryTarget }) => {
@@ -54,11 +55,11 @@ module.exports = [
     libraryTarget: 'commonjs',
     filename: 'openpix-react.cjs.js',
   }),
-  configEnv({
-    name: 'esm',
-    libraryTarget: 'module',
-    filename: 'openpix-react.esm.js',
-  }),
+  // configEnv({
+  //   name: 'esm',
+  //   libraryTarget: 'module',
+  //   filename: 'openpix-react.esm.js',
+  // }),
   // terser is throwing errors
   // configEnv({
   //   name: 'umd',

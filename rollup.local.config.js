@@ -40,10 +40,9 @@ export default [
       replace({
         preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('production'),
-        'process.env.OPENPIX_API': JSON.stringify('https://api.openpix.com.br'),
+        'process.env.OPENPIX_API': JSON.stringify('http://localhost:5001'),
       }),
-
-      terser(),
+      // terser(),
     ],
     output: [
       {
@@ -69,10 +68,10 @@ export default [
       replace({
         preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('production'),
-        'process.env.OPENPIX_API': JSON.stringify('https://api.openpix.com.br'),
+        'process.env.OPENPIX_API': JSON.stringify('http://localhost:5001'),
       }),
 
-      terser(),
+      // terser(),
     ],
     output: [
       {

@@ -18,11 +18,6 @@ export const api = (appID: string) => async (input: RequestInfo, init?: RequestI
 
     const data = await response.json();
 
-    console.log({
-      input,
-      data,
-    });
-
     return data;
   } catch (error) {
     return {
