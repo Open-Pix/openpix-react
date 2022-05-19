@@ -1,5 +1,5 @@
 import { baseUrl } from './apiBase';
-import { Api } from './Api';
+import { Api } from './api';
 
 const url = (id: string) => `/api/openpix/v1/charge/${id}`;
 
