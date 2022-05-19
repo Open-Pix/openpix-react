@@ -1,13 +1,14 @@
-import fs from 'fs';
+// import fs from 'fs';
 import path from 'path';
 import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
-import gzipSize from 'gzip-size';
-import * as brotliSize from 'brotli-size';
+// import gzipSize from 'gzip-size';
+// import * as brotliSize from 'brotli-size';
 import pkg from './package.json';
+import dts from 'rollup-plugin-dts';
 
 const input = './src/index.tsx';
 
@@ -99,23 +100,28 @@ export default [
         'process.env.OPENPIX_API': JSON.stringify('https://api.openpix.com.br'),
       }),
       terser(),
-      {
-        generateBundle(outputOptions, bundle) {
-          let sizeInfo = '';
-          for (const [name, chunk] of Object.entries(bundle)) {
-            const parsedSize = chunk.code.length;
-            const gzippedSize = gzipSize.sync(chunk.code);
-            const brotliedSize = brotliSize.sync(chunk.code);
-            sizeInfo += `Size of ${name}
-            =============================
-            min: ${parsedSize} b
-            gzip: ${gzippedSize} b
-            brotli: ${brotliedSize} b\n`.replace(/^\s+/gm, '');
-          }
-          console.info(sizeInfo);
-          fs.writeFileSync('size-snapshot.txt', sizeInfo, 'utf-8');
-        },
-      },
+      // {
+      //   generateBundle(outputOptions, bundle) {
+      //     let sizeInfo = '';
+      //     for (const [name, chunk] of Object.entries(bundle)) {
+      //       const parsedSize = chunk.code.length;
+      //       const gzippedSize = gzipSize.sync(chunk.code);
+      //       const brotliedSize = brotliSize.sync(chunk.code);
+      //       sizeInfo += `Size of ${name}
+      //       =============================
+      //       min: ${parsedSize} b
+      //       gzip: ${gzippedSize} b
+      //       brotli: ${brotliedSize} b\n`.replace(/^\s+/gm, '');
+      //     }
+      //     console.info(sizeInfo);
+      //     fs.writeFileSync('size-snapshot.txt', sizeInfo, 'utf-8');
+      //   },
+      // },
     ],
+  },
+  {
+    input: 'types/index.d.ts',
+    output: [{ file: pkg.types, format: 'esm' }],
+    plugins: [dts()],
   },
 ];
