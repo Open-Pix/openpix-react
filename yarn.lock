@@ -1543,10 +1543,17 @@
     "@types/http-proxy" "*"
     "@types/node" "*"
 
-"@types/http-proxy@*", "@types/http-proxy@^1.17.4":
+"@types/http-proxy@*":
   version "1.17.5"
   resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.5.tgz#c203c5e6e9dc6820d27a40eb1e511c70a220423d"
   integrity sha512-GNkDE7bTv6Sf8JbV2GksknKOsk7OznNYHSdrtvPJXO0qJ9odZig6IZKUi5RFGi6d1bf6dgIAe4uXi3DBc7069Q==
+  dependencies:
+    "@types/node" "*"
+
+"@types/http-proxy@^1.17.5":
+  version "1.17.9"
+  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.9.tgz#7f0e7931343761efde1e2bf48c40f02f3f75705a"
+  integrity sha512-QsbSjA/fSk7xB+UXlCT3wHBy5ai9wOcNDWwZAtud+jXhwOM3l+EYZh8Lng4+/6n8uar0J7xILzqftJdJ/Wdfkw==
   dependencies:
     "@types/node" "*"
 
@@ -1751,18 +1758,18 @@
     "@types/serve-static" "*"
     "@types/webpack" "*"
 
-"@types/webpack-plugin-serve@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-plugin-serve/-/webpack-plugin-serve-1.2.0.tgz#2b4b420b6ec4188c7067cc58b56e3ca4322064d4"
-  integrity sha512-b20Uf4ddtlhHFgt11nzm58YWesJekVdkOTcMHhb+dcYrgSscT9IExPoZ1lCNetPKfStKgfhqamPwXDeE11xlBw==
+"@types/webpack-plugin-serve@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-plugin-serve/-/webpack-plugin-serve-1.4.2.tgz#30ca8f4b9f74e74b29be682265e92ceb23269a8c"
+  integrity sha512-h7tKnZfAm3w6e9iiT60KzSeETiO19fLTUd/Z9Wc3dNMrztMXASoMhX1mIogySUjwW4fHsTpXhCUrJEZ02dkQLQ==
   dependencies:
     "@types/connect-history-api-fallback" "*"
-    "@types/http-proxy-middleware" "*"
     "@types/koa" "*"
     "@types/koa-compress" "*"
     "@types/koa-static" "*"
     "@types/node" "*"
     globby "^11.0.1"
+    http-proxy-middleware "^1.0.0"
 
 "@types/webpack-sources@*":
   version "2.1.0"
@@ -4401,15 +4408,15 @@ http-proxy-middleware@0.19.1:
     lodash "^4.17.11"
     micromatch "^3.1.10"
 
-http-proxy-middleware@^1.0.3:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.0.6.tgz#0618557722f450375d3796d701a8ac5407b3b94e"
-  integrity sha512-NyL6ZB6cVni7pl+/IT2W0ni5ME00xR0sN27AQZZrpKn1b+qRh+mLbBxIq9Cq1oGfmTc7BUq4HB77mxwCaxAYNg==
+http-proxy-middleware@^1.0.0, http-proxy-middleware@^1.0.3:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.3.1.tgz#43700d6d9eecb7419bf086a128d0f7205d9eb665"
+  integrity sha512-13eVVDYS4z79w7f1+NPllJtOQFx/FdUW4btIvVRMaRlUY9VGstAbo5MOhLEuUgZFRHn3x50ufn25zkj/boZnEg==
   dependencies:
-    "@types/http-proxy" "^1.17.4"
+    "@types/http-proxy" "^1.17.5"
     http-proxy "^1.18.1"
     is-glob "^4.0.1"
-    lodash "^4.17.20"
+    is-plain-obj "^3.0.0"
     micromatch "^4.0.2"
 
 http-proxy@^1.17.0, http-proxy@^1.18.1:
@@ -4820,6 +4827,11 @@ is-path-inside@^2.1.0:
   integrity sha512-wiyhTzfDWsvwAW53OBWF5zuvaOGlZ6PwYxAbPVDhpm+gM09xKQGjBq/8uYN12aDvMxnAnq3dxTyoSoRNmg5YFg==
   dependencies:
     path-is-inside "^1.0.2"
+
+is-plain-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-3.0.0.tgz#af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7"
+  integrity sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==
 
 is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
@@ -5703,7 +5715,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20:
+lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -8645,19 +8657,19 @@ webpack-merge@5.7.3, webpack-merge@^5.7.3:
     clone-deep "^4.0.1"
     wildcard "^2.0.0"
 
-webpack-plugin-ramdisk@^0.1.2:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/webpack-plugin-ramdisk/-/webpack-plugin-ramdisk-0.1.8.tgz#f97db5f7c57a961baf7682872437b9f372ac28d4"
-  integrity sha512-JXIZZHKEeYA45yNPp5XDJ/VSt+j3yV2/zw5trF30I4lYcrWRnQ/45yKrmeu8dtPe4Wxm36os20XAtN6u1NAfqQ==
+webpack-plugin-ramdisk@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-plugin-ramdisk/-/webpack-plugin-ramdisk-0.2.0.tgz#8fb9c5dfd5343a7c9a2cdf6bf3a0aaddeaa00bbf"
+  integrity sha512-I5OTfDuaQdiZQUm19Ok/8oCBmYCGqFu8e2sY6ytGT9xehZQJXB6cqdf+rHUr98gzwhcC2O96Wuhs6BQTmOy2hg==
   dependencies:
     chalk "^4.1.0"
     execa "^4.0.3"
     superstruct "^0.12.1"
 
-webpack-plugin-serve@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/webpack-plugin-serve/-/webpack-plugin-serve-1.3.0.tgz#81736be9e5f5c6883590d755887af8b6c61670d8"
-  integrity sha512-oXJOki593KgZhOzc61nfyCL9AzrnZymkpZYZDytYIn0oXTcrqLfL/qRsO7JJyLrit4OIYdYF60EjgHlbVZs9hg==
+webpack-plugin-serve@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/webpack-plugin-serve/-/webpack-plugin-serve-1.6.0.tgz#81d467f4ab1cbb549657bff0e0be6129886a87bf"
+  integrity sha512-0163GYEpDdRmd0D82XCeYalpSrRg9+oqEtoVUeCnn1o1lnGjqFoKdgSZBhXNOg2at52l4ESwLskPhPp3cHLAqA==
   dependencies:
     chalk "^4.0.0"
     connect-history-api-fallback "^1.5.0"
@@ -8680,8 +8692,8 @@ webpack-plugin-serve@1.3.0:
     rimraf "^3.0.2"
     strip-ansi "^6.0.0"
     superstruct "^0.12.1"
-    webpack-plugin-ramdisk "^0.1.2"
-    ws "^7.1.0"
+    webpack-plugin-ramdisk "^0.2.0"
+    ws "^7.5.3"
 
 webpack-sources@^2.1.1:
   version "2.2.0"
@@ -8835,10 +8847,10 @@ ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^7.1.0, ws@^7.2.3:
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
-  integrity sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
+ws@^7.2.3, ws@^7.5.3:
+  version "7.5.7"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.7.tgz#9e0ac77ee50af70d58326ecff7e85eb3fa375e67"
+  integrity sha512-KMvVuFzpKBuiIXW3E4u3mySRO2/mCHSyZDJQM5NQ9Q9KHWHWh0NHgfbRMLLrceUK5qAL4ytALJbpRMjixFZh8A==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
