@@ -1,27 +1,29 @@
-export type Api = (input: RequestInfo, init?: RequestInit) => Promise<Response>;
+export type Api<Data extends any> = (input: RequestInfo, init?: RequestInit) => Promise<Data>;
 
-export const api = (appID: string) => async (input: RequestInfo, init?: RequestInit): Api => {
-  const headers = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: appID,
-    ...(init?.headers || {}),
-  };
+export const api =
+  (appID: string) =>
+  async (input: RequestInfo, init?: RequestInit): Promise<any> => {
+    const headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: appID,
+      ...(init?.headers || {}),
+    };
 
-  const options = {
-    ...init,
-    headers,
-  };
+    const options = {
+      ...init,
+      headers,
+    };
 
-  try {
-    const response = await fetch(input, options);
+    try {
+      const response = await fetch(input, options);
 
-    const data = await response.json();
+      const data = await response.json();
 
-    return data;
-  } catch (error) {
-    return {
-      error,
+      return data;
+    } catch (error) {
+      return {
+        error,
+      };
     }
-  }
-}
+  };
