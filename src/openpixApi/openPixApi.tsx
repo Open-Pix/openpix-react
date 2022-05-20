@@ -7,6 +7,6 @@ export const openPixApi = (appID: string) => {
 
   return {
     chargeGet: chargeGet(apiFetch),
-    chargePost: chargePost(apiFetch)
-  }
-}
+    chargePost: chargePost(apiFetch),
+  };
+};

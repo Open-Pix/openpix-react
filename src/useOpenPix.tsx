@@ -2,10 +2,10 @@ import {
   ChargePostPayload,
   ChargePostResponse,
   Charge,
-} from "./openpixApi/chargePost";
-import { openPixApi } from "./openpixApi/openPixApi";
-import { useRef, useState } from "react";
-import { DEFAULT_POLLING_INTERVAL, usePooling } from "./usePooling";
+} from './openpixApi/chargePost';
+import { openPixApi } from './openpixApi/openPixApi';
+import { useRef, useState } from 'react';
+import { DEFAULT_POLLING_INTERVAL, usePooling } from './usePooling';
 
 type ChargeUpdateStatus = {
   charge?: Charge;
@@ -20,14 +20,15 @@ export type UseOpenPix = {
   appID: string;
   onPay: (charge: Charge) => void;
   pollingInterval?: number;
+  chargeCreate: (payload: ChargePostPayload) => Promise<ChargePostResponse>;
 };
 export const useOpenPix = ({
-                             appID,
-                             onPay,
-                             pollingInterval = DEFAULT_POLLING_INTERVAL,
-                           }: UseOpenPix): UseOpenPixReturn => {
+  appID,
+  onPay,
+  pollingInterval = DEFAULT_POLLING_INTERVAL,
+}: UseOpenPix): UseOpenPixReturn => {
   const api = useRef(openPixApi(appID));
-  const [charge, setCharge] = useState<ChargePostResponse | null>(null);
+  const [charge, setCharge] = useState<Charge | null>(null);
 
   const chargeCreate = async (payload: ChargePostPayload) => {
     try {
@@ -69,14 +70,14 @@ export const useOpenPix = ({
     if (result.charge) {
       setCharge(result.charge);
 
-      if (result.charge.status === "COMPLETED") {
+      if (result.charge.status === 'COMPLETED') {
         onPay(result.charge);
       }
     }
   };
 
-  const isChargePaid = charge && charge.status === "COMPLETED";
-  const shouldPool = appID && !!charge && !isChargePaid;
+  const isChargePaid = charge && charge.status === 'COMPLETED';
+  const shouldPool = !!appID && !!charge && !isChargePaid;
 
   usePooling(shouldPool, fetchChargeStatus, pollingInterval);
 
