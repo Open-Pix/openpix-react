@@ -16,9 +16,9 @@ export type Charge = {
 };
 
 export type ChargePostResponse = {
-  charge: Charge;
-  correlationID: string;
-  brCode: string;
+  charge?: Charge;
+  correlationID?: string;
+  brCode?: string;
   error?: string;
 };
 

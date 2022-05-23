@@ -20,7 +20,6 @@ export type UseOpenPix = {
   appID: string;
   onPay: (charge: Charge) => void;
   pollingInterval?: number;
-  chargeCreate: (payload: ChargePostPayload) => Promise<ChargePostResponse>;
 };
 export const useOpenPix = ({
   appID,
@@ -38,10 +37,10 @@ export const useOpenPix = ({
         return { error };
       }
 
-      setCharge(charge);
+      setCharge(charge!);
 
       return { charge };
-    } catch (err) {
+    } catch (err: any) {
       return { error: err.toString() };
     }
   };

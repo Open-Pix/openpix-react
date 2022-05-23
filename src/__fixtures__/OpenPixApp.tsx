@@ -1,5 +1,5 @@
 import { useOpenPix } from '../useOpenPix';
-import {Charge, ChargePostResponse} from '../openpixApi/chargePost';
+import { Charge, ChargePostResponse } from '../openpixApi/chargePost';
 import { useState } from 'react';
 
 export const OpenPixApp = () => {
@@ -33,7 +33,7 @@ export const OpenPixApp = () => {
       return;
     }
 
-    setCharge(charge);
+    setCharge(charge!);
   };
 
   if (error) {
