@@ -18,20 +18,7 @@
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "es2020.intl"
-    ],
-    "typeRoots": [
-      "./typing/image"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable", "es2020.intl"]
   },
-  "exclude": [
-    "node_modules",
-    "**/*.spec.tsx",
-    "./src/emails",
-    "types"
-  ]
+  "exclude": ["node_modules", "**/*.spec.tsx", "./src/emails", "types"]
 }
