@@ -52,7 +52,7 @@
     "microbundle": "^0.15.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-refresh": "^0.13.0",
+    "react-refresh": "^0.14.0",
     "regenerator-runtime": "^0.13.9",
     "rollup": "^2.74.1",
     "rollup-plugin-dts": "^4.2.1",
