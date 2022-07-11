@@ -44,7 +44,7 @@
     "brotli-size": "^4.0.0",
     "core-js": "^3.22.5",
     "cross-env": "^7.0.3",
-    "dotenv-webpack": "^7.1.0",
+    "dotenv-webpack": "^8.0.0",
     "gzip-size": "^7.0.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
