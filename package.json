@@ -39,7 +39,7 @@
     "@types/testing-library__jest-dom": "^5.14.3",
     "@types/webpack-dev-server": "4.7.2",
     "@types/webpack-plugin-serve": "1.4.2",
-    "babel-jest": "^28.1.0",
+    "babel-jest": "^29.1.2",
     "babel-loader": "^8.2.5",
     "brotli-size": "^4.0.0",
     "core-js": "^3.22.5",
